@@ -16,8 +16,6 @@ module Players
     end
 
     def move_X(board)
-      @a = "X"
-      @b = "O"
       if @mc == 1
         "1"
       elsif @mc == 2
@@ -166,8 +164,6 @@ module Players
     end
 
     def move_O(board)
-      @a = "O"
-      @b = "X"
       if @mc == 1
         if board.cells[4] == "X"
           "1"
@@ -287,6 +283,10 @@ module Players
         move += 1
         "#{move}"
       end
+    end
+
+    def random_corner_move
+      ["1", "3", "7", "9"].sample
     end
   end
 end
