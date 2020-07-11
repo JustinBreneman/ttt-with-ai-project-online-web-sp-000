@@ -1,7 +1,7 @@
 require 'pry'
 
 class Game
-  attr_accessor :board, :player_1, :player_2
+  attr_accessor :board, :player_1, :player_2, :x_win, :o_win, :tie
   WIN_COMBINATIONS = [
     [0,1,2],
     [3,4,5],
@@ -102,6 +102,8 @@ class Game
         end
         game.play
       end
+    elsif choice.downcase == "wargames"
+      wargames
     else
       game = Game.new
       game.play
@@ -123,6 +125,13 @@ class Game
       self.class.cli
     else
       puts "Thank you for playing, see you next time!"
+    end
+  end
+
+  def self.wargames
+    100.times do
+      game = Game.new(Players::Computer.new("X"), Players::Computer.new("O"), Board.new)
+      game.play
     end
   end
 end
