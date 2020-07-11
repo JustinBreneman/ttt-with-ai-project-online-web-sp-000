@@ -2,7 +2,7 @@ module Players
   class Computer < Player
 
     @corners = ["1", "3", "7", "9"]
-    
+
     def initialize(token)
       super
       @mc = 0
