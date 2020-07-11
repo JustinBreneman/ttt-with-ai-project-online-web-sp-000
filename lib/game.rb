@@ -134,7 +134,7 @@ class Game
   def self.wargames
     100.times do
       game = Game.new(Players::Computer.new("X"), Players::Computer.new("O"), Board.new)
-      until over?
+      until game.over?
         turn
       end
       if draw?
