@@ -17,7 +17,7 @@ module Players
 
     def move_X(board)
       if @mc == 1
-        "1"
+        ["1", "3", "7", "9"].sample
       elsif @mc == 2
         if board.cells[4] == " "
           "5"
