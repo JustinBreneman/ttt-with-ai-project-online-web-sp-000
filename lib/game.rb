@@ -135,15 +135,15 @@ class Game
     100.times do
       game = Game.new(Players::Computer.new("X"), Players::Computer.new("O"), Board.new)
       until game.over?
-        turn
+        game.turn
       end
-      if draw?
+      if game.draw?
         @tie += 1
         puts "Cat's Game!"
-      elsif winner == "X"
+      elsif game.winner == "X"
         @x_win += 1
         puts "Congratulations X!"
-      elsif winner == "O"
+      elsif game.winner == "O"
         @o_win += 1
         puts "Congratulations O!"
       end
