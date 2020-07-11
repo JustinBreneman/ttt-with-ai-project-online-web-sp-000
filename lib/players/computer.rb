@@ -176,6 +176,8 @@ module Players
         else
           "5"
         end
+      elsif @mc == 2
+        ["2", "4", "6", "8"].sample
       elsif board.cells[0] == "O" && board.cells[1] == "O" && board.cells[2] == " "
         "3"
       elsif board.cells[0] == "O" && board.cells[2] == "O" && board.cells[1] == " "
