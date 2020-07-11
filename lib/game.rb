@@ -152,5 +152,12 @@ class Game
     puts "Tied #{@tie} times"
     puts "X won #{@x_win} times"
     puts "O won #{@o_win} times"
+    puts "Would you like to play again? Y/N"
+    input = gets.chomp
+    if input.downcase == "y"
+      self.class.cli
+    else
+      puts "Thank you for playing, see you next time!"
+    end
   end
 end
