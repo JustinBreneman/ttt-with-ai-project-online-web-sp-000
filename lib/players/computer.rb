@@ -174,7 +174,7 @@ module Players
     def move_O(board)
       if @mc == 1
         if board.cells[4] == "X"
-          "1"
+          @corners.sample
         else
           "5"
         end
