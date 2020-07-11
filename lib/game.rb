@@ -118,14 +118,9 @@ class Game
       turn
     end
     if draw?
-      @tie += 1
       puts "Cat's Game!"
-    elsif winner == "X"
-      @x_win += 1
-      puts "Congratulations X!"
-    elsif winner == "O"
-      @o_win += 1
-      puts "Congratulations O!"
+    elsif winner == "X" || winner == "O"
+      puts "Congratulations #{winner}!"
     end
     puts "Would you like to play again? Y/N"
     input = gets.chomp
@@ -139,7 +134,23 @@ class Game
   def self.wargames
     100.times do
       game = Game.new(Players::Computer.new("X"), Players::Computer.new("O"), Board.new)
-      game.play
+      until over?
+        turn
+      end
+      if draw?
+        @tie += 1
+        puts "Cat's Game!"
+      elsif winner == "X"
+        @x_win += 1
+        puts "Congratulations X!"
+      elsif winner == "O"
+        @o_win += 1
+        puts "Congratulations O!"
+      end
     end
+    puts "Wargame results are as follows:"
+    puts "Tied #{@tie} times"
+    puts "X won #{@x_win} times"
+    puts "O won #{@o_win} times"
   end
 end
