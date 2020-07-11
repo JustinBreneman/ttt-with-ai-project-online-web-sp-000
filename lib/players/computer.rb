@@ -30,30 +30,6 @@ module Players
         elsif board.cells[8] == "X"
           "1"
         end
-      elsif @mc == 3
-        if board.cells[8] == " "
-          "9"
-        elsif board.cells[4] == " "
-          "5"
-        else
-          if board.cells[0] == "O" && board.cells[4] == "O"
-            "9"
-          elsif board.cells[1] == "O" && board.cells[4] == "O"
-            "8"
-          elsif board.cells[2] == "O" && board.cells[4] == "O"
-            "7"
-          elsif board.cells[3] == "O" && board.cells[4] == "O"
-            "6"
-          elsif board.cells[5] == "O" && board.cells[4] == "O"
-            "4"
-          elsif board.cells[6] == "O" && board.cells[4] == "O"
-            "3"
-          elsif board.cells[7] == "O" && board.cells[4] == "O"
-            "2"
-          elsif board.cells[8] == "O" && board.cells[4] == "O"
-            "1"
-          end
-        end
       elsif board.cells[0] == "X" && board.cells[1] == "X" && board.cells[2] == " "
         "3"
       elsif board.cells[0] == "X" && board.cells[2] == "X" && board.cells[1] == " "
