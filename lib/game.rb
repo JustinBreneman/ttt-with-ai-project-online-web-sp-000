@@ -2,6 +2,9 @@ require 'pry'
 
 class Game
   attr_accessor :board, :player_1, :player_2, :x_win, :o_win, :tie
+  @x_win = 0
+  @o_win = 0
+  @tie = 0
   WIN_COMBINATIONS = [
     [0,1,2],
     [3,4,5],
@@ -115,9 +118,14 @@ class Game
       turn
     end
     if draw?
+      @tie += 1
       puts "Cat's Game!"
-    elsif winner == "X" || winner == "O"
-      puts "Congratulations #{winner}!"
+    elsif winner == "X"
+      @x_win += 1
+      puts "Congratulations X!"
+    elsif winner == "O"
+      @o_win += 1
+      puts "Congratulations O!"
     end
     puts "Would you like to play again? Y/N"
     input = gets.chomp
