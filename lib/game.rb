@@ -155,7 +155,7 @@ class Game
     puts "Would you like to play again? Y/N"
     input = gets.chomp
     if input.downcase == "y"
-      self.class.cli
+      self.cli
     else
       puts "Thank you for playing, see you next time!"
     end
