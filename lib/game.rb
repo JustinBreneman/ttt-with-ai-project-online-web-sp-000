@@ -2,9 +2,6 @@ require 'pry'
 
 class Game
   attr_accessor :board, :player_1, :player_2, :x_win, :o_win, :tie
-  @x_win = 0
-  @o_win = 0
-  @tie = 0
   WIN_COMBINATIONS = [
     [0,1,2],
     [3,4,5],
@@ -132,6 +129,9 @@ class Game
   end
 
   def self.wargames
+    @x_win = 0
+    @o_win = 0
+    @tie = 0
     100.times do
       game = Game.new(Players::Computer.new("X"), Players::Computer.new("O"), Board.new)
       until game.over?
