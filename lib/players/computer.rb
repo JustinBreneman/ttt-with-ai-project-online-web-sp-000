@@ -1,8 +1,6 @@
 module Players
   class Computer < Player
 
-    @corners = ["1", "3", "7", "9"]
-
     def initialize(token)
       super
       @mc = 0
@@ -19,7 +17,7 @@ module Players
 
     def move_X(board)
       if @mc == 1
-        @corners.sample
+        ["1", "3", "7", "9"].sample
       elsif @mc == 2
         if board.cells[4] == " "
           "5"
@@ -174,7 +172,7 @@ module Players
     def move_O(board)
       if @mc == 1
         if board.cells[4] == "X"
-          @corners.sample
+          ["1", "3", "7", "9"].sample
         else
           "5"
         end
